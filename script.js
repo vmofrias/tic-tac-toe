@@ -13,8 +13,8 @@ const WINNING_COMBINATIONS = [
 
 const cellElements = document.querySelectorAll("[data-cell]");
 const board = document.getElementById("board");
-var winningMessageElement = document.getElementById("winningMessage");
-var winningMessageTextElement = document.querySelector(
+const winningMessageElement = document.getElementById("winningMessage");
+const winningMessageTextElement = document.querySelector(
   "[data-winning-message-text]",
 );
 const restartButton = document.getElementById("restartButton");
@@ -54,7 +54,7 @@ function handleClick(e) {
 
 function endGame(draw) {
   if (draw) {
-    winningMessageTextElement = "Draw!";
+    winningMessageTextElement.innerText = "Draw!";
   } else {
     winningMessageTextElement.innerText = `${
       circleTurn ? "O Ganhou!" : "X Ganhou!"
